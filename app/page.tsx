@@ -3,6 +3,7 @@ import TopHeader from "./components/TopHeader";
 import Image from "next/image";
 import HeaderMenu from "./components/HeaderMenu";
 import { headers } from "next/headers";
+import SearchBlock from "./components/SearchBlock";
 
 export default async function Home() {
   const headerList = await headers();
@@ -24,6 +25,10 @@ export default async function Home() {
         </Link>
       </div>
       <HeaderMenu pathname={pathname} />
+      {/* search block */}
+      <div className="content">
+        <SearchBlock />
+      </div>
     </>
   );
 }

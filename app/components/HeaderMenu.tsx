@@ -1,5 +1,7 @@
 "use client";
 
+import { Directories } from "@/constants/file";
+import Link from "next/link";
 import { useState } from "react";
 
 export const menus = [
@@ -34,7 +36,7 @@ const HeaderMenu: React.FC<IProps> = ({ pathname }) => {
           {menus.map((menu) => (
             <div key={menu.slug}>
               <div
-                className={` text-center min-w-12 hover:bg-[#f4f4f4] hover:text-black hover:rounded-md hover:shadow-md hover:px-4 hover:py-1 ${
+                className={`text-center min-w-12 hover:bg-[#f4f4f4] hover:text-black hover:rounded-md hover:shadow-md hover:px-4 hover:py-1 ${
                   pathname === menu.slug
                     ? "bg-[#f4f4f4] text-black rounded-md shadow-md px-4 py-1 m-auto"
                     : ""
@@ -48,10 +50,25 @@ const HeaderMenu: React.FC<IProps> = ({ pathname }) => {
                 }}
               >
                 {menu.name}
+                {menu.slug === "categories" && showDirectory && (
+                  <div className="absolute  bg-[#f4f4f4] z-10 rounded-lg left-0 rounded-tl-none">
+                    <div className="grid grid-cols-3 m-4 min-w-[34rem] gap-4 ">
+                      {Directories.map((directory) => (
+                        <div
+                          key={directory.slug}
+                          className="bg-gray-200 text-[#4f4f4f]  min-w-12  py-2 text-xs font-semibold rounded-md"
+                        >
+                          <Link
+                            className="hover:underline"
+                            href={"#"}
+                          >{`${directory.name}  `}</Link>
+                          <span>({directory.count})</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
-              {menu.slug === "categories" && (
-                <div className="absolute h-16 w-16 bg-red-900 right-0 bottom-0 "></div>
-              )}
             </div>
           ))}
         </div>
