@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AdProceed - Classified Ads</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="bg-gray-800 p-4">
+      <div class="container mx-auto flex justify-between items-center">
+        <a class="text-orange-500 font-bold text-xl" href="#"
+          >AD <span class="text-indigo-100">PROCEED</span></a
+        >
+        <div class="flex items-center space-x-4">
+          <a class="text-white hover:text-orange-400" href="#">Home</a>
+          <a class="text-white hover:text-orange-400" href="#">Categories</a>
+          <a class="text-white hover:text-orange-400" href="#">All Ads</a>
+          <a class="text-white hover:text-orange-400" href="#"
+            >Submit Article</a
+          >
+          <button class="bg-yellow-500 text-white px-4 py-2 rounded">
+            Post an Ad
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section with Ad Placeholder -->
+    <div class="bg-gray-100 text-center py-10">
+      <p>Ads by Google</p>
+      <div class="border border-gray-300 py-12">
+        <p>Ad placeholder</p>
+      </div>
+    </div>
+
+    <!-- Search Section -->
+    <div class="container mx-auto mt-8 flex items-center space-x-4">
+      <input
+        type="text"
+        class="w-full p-2 border border-gray-300 rounded"
+        placeholder="What are you looking for?"
+      />
+      <select class="p-2 border border-gray-300 rounded">
+        <option selected>All Categories</option>
+        <option>Business</option>
+        <option>Services</option>
+        <option>Health</option>
+      </select>
+      <button class="bg-indigo-900 text-white px-4 py-2 rounded">Search</button>
+    </div>
+
+    <!-- Categories Section -->
+    <div class="container mx-auto mt-8">
+      <div class="flex justify-between">
+        <div class="w-2/3">
+          <h5 class="text-xl font-semibold text-indigo-900">
+            Ad Categories
+            <span class="bg-indigo-900 text-white rounded px-2"
+              >Classified listings</span
+            >
+          </h5>
+          <ul class="flex flex-wrap space-x-4 mt-4">
+            <li><a href="#" class="text-blue-500">Business</a> (2220)</li>
+            <li><a href="#" class="text-blue-500">Events</a> (118)</li>
+            <li><a href="#" class="text-blue-500">Real Estate</a> (453)</li>
+            <li><a href="#" class="text-blue-500">Jobs</a> (301)</li>
+            <li><a href="#" class="text-blue-500">Services</a> (7558)</li>
+            <li><a href="#" class="text-blue-500">Pets</a> (198)</li>
+          </ul>
+        </div>
+        <div class="w-1/3 p-4 border">
+          <h6 class="font-semibold">Welcome to our Website!</h6>
+          <p>
+            List your classified ads, and manage all ads from your personalized
+            dashboard.
+          </p>
+          <button class="bg-indigo-900 text-white w-full py-2 rounded mt-2">
+            Join Now
+          </button>
+          <div class="border mt-4 p-3">
+            <p>Ad placeholder</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ads Section -->
+    <div class="container mx-auto mt-8">
+      <!-- Tabs for New Listings, Popular, and Random -->
+      <div class="flex space-x-4 border-b">
+        <button class="px-4 py-2 text-blue-500 border-b-2 border-indigo-900">
+          New Listings
+        </button>
+        <button class="px-4 py-2 text-blue-500">Popular</button>
+        <button class="px-4 py-2 text-blue-500">Random</button>
+      </div>
+
+      <div class="mt-4 space-y-6">
+        <!-- Ad Card Example -->
+        <div class="flex items-start border p-4 rounded-lg space-x-4">
+          <img
+            src="https://cdn.thewirecutter.com/wp-content/media/2024/05/smartphone-2048px-1013.jpg"
+            alt="Ad image"
+            class="w-32 h-32 object-cover rounded-md"
+          />
+          <div class="flex-grow">
+            <h5 class="font-semibold text-lg">
+              Apple Watch SE 2nd Gen 40mm GPS
+            </h5>
+            <p class="text-gray-500 text-sm">
+              FOR SELL - MrJohn - 5 seconds ago
+            </p>
+            <p class="text-gray-700 mt-2">
+              iPower Resale is a small, passionate group specializing in the
+              resale of open box, refurbished, and pre-owned Apple hardware.
+            </p>
+          </div>
+          <span class="bg-blue-800 text-white py-1 px-3 rounded">$149.00</span>
+        </div>
+        <!-- Add more ad cards as needed -->
+      </div>
+    </div>
+
+    <footer class="bg-gray-800 text-white text-center py-4 mt-8">
+      <p>&copy; 2024 AdProceed. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
