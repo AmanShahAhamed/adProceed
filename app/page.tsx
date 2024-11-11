@@ -1,33 +1,22 @@
-import Link from "next/link";
+import Content from "./components/Content";
+import SidebarLeft from "./components/SidebarLeft";
+import SidebarRight from "./components/SidebarRight";
 import TopHeader from "./components/TopHeader";
-import Image from "next/image";
-import HeaderMenu from "./components/HeaderMenu";
-import { headers } from "next/headers";
-import SearchBlock from "./components/SearchBlock";
 
 export default async function Home() {
-  const headerList = await headers();
-  const pathname = headerList.get("x-current-path") || "";
   return (
     <>
       <TopHeader />
-      <div className="w-[100%] h-28 content ">
-        <Link href={""}>
-          <Image
-            className="h-auto max-w-[100%] my-4"
-            alt="site-banner"
-            src={
-              "https://www.adproceed.com/wp-content/uploads/2024/10/cropped-logo.png"
-            }
-            width={240}
-            height={112}
-          />
-        </Link>
-      </div>
-      <HeaderMenu pathname={pathname} />
-      {/* search block */}
-      <div className="content">
-        <SearchBlock />
+      <div className="grid grid-cols-6 border-[1px] border-black">
+        <div className="col-span-1 border-[1px] border-r-black ">
+          <SidebarLeft />
+        </div>
+        <div className="col-span-4">
+          <Content />
+        </div>
+        <div className="col-span-1 border-[1px] border-l-black">
+          <SidebarRight />
+        </div>
       </div>
     </>
   );

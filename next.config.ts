@@ -6,9 +6,9 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "www.adproceed.com",
+        hostname: "www.adslov.com",
         port: "",
-        pathname: "/wp-content/uploads/**", // Ensure this matches the image path structure
+        pathname: "/images/**", // Ensure this matches the image path structure
       },
     ],
   },
