@@ -15,7 +15,7 @@ const SidebarRight = () => {
       <ul>
         {country.map((c) => (
           <li
-            className="cursor-pointer text-[#293e80] text-base hover:text-[#FF7B00]"
+            className="cursor-pointer border-[1px] border-black p-2 my-2 text-[#293e80]  hover:text-[#FF7B00] text-sm rounded-md hover:font-semibold hover:bg-gray-100"
             key={c}
           >
             {c}

@@ -1,4 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
+import digitalItem from "../../public/icons/digital_items.png";
+import FixList from "@/components/Fixlist";
 export const a: Record<string, string[]> = {
   "Digital Items": [
     "Websites",
@@ -183,36 +186,55 @@ export const a: Record<string, string[]> = {
 
 const Content = () => {
   return (
-    <div className="m-2">
-      <p className="font-semibold text-lg">
+    <div className="">
+      <p className="font-semibold text-lg bg-[#4174a8] text-white  p-2">
         Free Classified Advertising Website
       </p>
-      <p className="text-sm my-2">
-        {` If you're tired of dealing with complicated and time-consuming
-        classified ad posting processes, our website is here to help. With our
-        platform, you can easily and quickly post free classified ads without
-        the need for registration. Our user-friendly interface allows you to
-        submit your ad and have it live on our site in just a few minutes. Plus,
-        there are no fees or registration required, making it an affordable and
-        convenient way to reach potential buyers. Give our free classified ad
-        posting service a try today and see the difference it can make.`}
-      </p>
-      <div className="grid grid-cols-3 gap-3">
+      <ul className="p-2 bg-gray-100 text-sm border-[1px] border-black border-r-0 rounded-b-md">
+        <li>
+          Are you tired of the complexities and delays often associated with
+          posting classified ads? Our platform offers a seamless, fast, and
+          efficient solution to help you get your ads online in no time. With
+          our intuitive interface, you can easily submit and publish your
+          classified ad within minutes—no registration required.
+        </li>
+        <li>
+          Best of all, our service is completely free. We believe in providing a
+          straightforward and affordable way for you to reach a wide audience of
+          potential buyers without the added burden of fees or lengthy sign-up
+          processes. Experience the convenience and efficiency of posting
+          classified ads on our platform today.
+        </li>
+      </ul>
+      <div className="grid grid-cols-3 gap-3 p-2">
         {Object.keys(a).map((key) => (
           <div key={key} className="my-2">
-            <div className="flex">
-              <Image
-                alt="category"
-                src={"https://www.adslov.com/images/category.gif"}
-                width={30}
-                height={10}
-              />
-              <p className="text-[#039] text-base font-semibold">{key}</p>
+            <div className="flex gap-2 border-[1px] border-black p-2 rounded-md">
+              <Image alt="category" src={digitalItem} width={20} height={10} />
+              <Link
+                href={"category"}
+                className="text-[#039] text-base text-start font-semibold cursor-pointer hover:text-[#FF7B00] "
+              >
+                {key}
+              </Link>
             </div>
-            <ul className="mx-8 text-sm ">
-              {a[key].map((k) => (
-                <li key={k}>{k}</li>
-              ))}
+            <ul className="mx-8 text-sm  ">
+              {
+                // a[key].map((k) => (
+                //   <li key={k} className="border-b-[1px] border-gray-100 py-2">
+                //     <Link
+                //       href={"category"}
+                //       className="cursor-pointer hover:text-[#FF7B00]"
+                //     >
+                //       {k}
+                //     </Link>
+                //   </li>
+                // ))
+                <FixList
+                  className="border-b-[1px] border-gray-100 py-2"
+                  list={a[key]}
+                />
+              }
             </ul>
           </div>
         ))}

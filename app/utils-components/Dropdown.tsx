@@ -92,7 +92,7 @@ const Dropdown = () => {
           <div
             className={`absolute left-1 mt-7  border border-gray-100 bg-white  rounded-md shadow-md shadow-slate-200  min-w-full text-start  transition-all ease-in-out duration-300  ${
               open ? "opacity-100 scale-100" : "opacity-0 scale-95"
-            } transition-all duration-300 ease-in-out`}
+            } transition-all duration-1000 ease-in-out`}
           >
             <ul className="py-1.5 m-2 text-xs text-black">
               {options.map(({ name, key }) => (

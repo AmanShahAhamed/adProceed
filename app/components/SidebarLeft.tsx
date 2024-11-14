@@ -1,5 +1,5 @@
 "use client";
-import Btn from "@/ui/Btn";
+import Btn from "@/components/Btn";
 import Dropdown from "../utils-components/Dropdown";
 import { FaSearch } from "react-icons/fa";
 
@@ -30,9 +30,33 @@ const SidebarLeft = () => {
           console.log("home");
         }}
       />
-      <div className="my-40 mx-4 flex flex-col align-middle justify-center">
-        <p className="font-semibold text-base text-center">New Classified </p>
-        <p className="font-semibold text-base text-center">Websites</p>
+      <div className="my-20 flex flex-col border-[1px] border-black rounded-md">
+        <p className="font-semibold text-sm text-center bg-[#4174a8] text-white p-2 rounded-md rounded-b-none">
+          Why Choose Us?
+        </p>
+        <ul className="text-sm p-2 bg-gray-100 rounded-md">
+          <li>
+            Our platform offers a hassle-free way to post classified ads quickly
+            and effortlessly.
+          </li>
+          <li>
+            You can publish your ad for free without any registration saving you
+            time and simplifying the process.
+          </li>
+          <li>
+            Our intuitive interface ensures that your ad goes live within
+            minutes.
+          </li>
+          <li>
+            Best of all, there are no hidden costs or sign-up requirements,
+            making it an affordable and practical solution to connect with
+            potential buyers.
+          </li>
+          <li>
+            Experience the ease and convenience of our free classified ad
+            service today.
+          </li>
+        </ul>
       </div>
     </div>
   );
