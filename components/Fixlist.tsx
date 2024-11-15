@@ -4,33 +4,52 @@ import { useMemo, useState } from "react";
 
 interface IProps {
   className?: string;
-  list: string[];
+  list: {
+    id: string;
+    name: string;
+  }[];
 }
 export const FixList: React.FC<IProps> = ({ className, list }) => {
   const modifiedList = useMemo(
     () =>
       list.length <= 5
-        ? [list]
+        ? [
+            [
+              ...list,
+              ...Array.from({ length: 6 - list.length }, () => ({
+                name: "",
+                id: "",
+              })),
+            ],
+          ]
         : Array.from({ length: Math.ceil(list.length / 5) }, (_, i) =>
             list.slice(i * 5, i * 5 + 5)
           ),
     [list]
   );
-  const [item, setItem] = useState<string[]>(modifiedList[0]);
+  const [item, setItem] = useState<{ id: string; name: string }[]>(
+    modifiedList[0]
+  );
   const [showLess, setShowLess] = useState(false);
 
   const createFixList = () => {
     return (
       <>
-        {item.map((num) => (
-          <li className={className} key={num}>
-            <Link
-              href={"category"}
-              className="cursor-pointer hover:text-[#4682b4]"
-            >
-              {num}
-            </Link>
-          </li>
+        {item.map(({ id, name: num }) => (
+          <div key={id}>
+            {num === "" ? (
+              <li className="py-6" key={num}></li>
+            ) : (
+              <li className={className} key={num}>
+                <Link
+                  href={"category"}
+                  className="cursor-pointer hover:text-[#4682b4] hover:font-thin"
+                >
+                  {num}
+                </Link>
+              </li>
+            )}
+          </div>
         ))}
         {list.length > 5 && (
           <div>
