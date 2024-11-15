@@ -54,7 +54,7 @@ const options = [
 ];
 
 const Dropdown = () => {
-  const [dropdownName, setDropdownName] = useState("all");
+  const [dropdownName, setDropdownName] = useState("All");
   const [open, setOpen] = useState(false);
 
   const ref = useRef<HTMLDivElement>(null);
@@ -80,9 +80,9 @@ const Dropdown = () => {
         id="category"
         onClick={() => setOpen((prev) => !prev)}
       >
-        <p className="overflow-scroll">{dropdownName}</p>
+        <p className="">{dropdownName}</p>
         <span
-          className={`pr-2 pt-1 font-semibold  ${
+          className={`pr-2 pt-1 font-semibold absolute right-2 ${
             !open ? "transform rotate-180 " : ""
           } transition-transform duration-300`}
         >
@@ -90,7 +90,7 @@ const Dropdown = () => {
         </span>
         {open && (
           <div
-            className={`absolute left-1 mt-7  border border-gray-100 bg-white  rounded-md shadow-md shadow-slate-200  min-w-full text-start  transition-all ease-in-out duration-300  ${
+            className={`absolute left-1 mt-7 bg-slate-50 border border-gray-100 bg-white rounded-md shadow-md shadow-slate-200  min-w-full text-start  transition-all ease-in-out duration-300  ${
               open ? "opacity-100 scale-100" : "opacity-0 scale-95"
             } transition-all duration-1000 ease-in-out`}
           >
@@ -98,7 +98,7 @@ const Dropdown = () => {
               {options.map(({ name, key }) => (
                 <li key={key}>
                   <p
-                    className={`flex mb-1 items-center font-medium px-3 rounded-md py-2 cursor-pointer transition-colors duration-200 ease-in ${"hover:bg-[#EFEFFF] text-[#40444D] hover:text-[#2E3192]"} overflow-hidden`}
+                    className={`flex mb-1 items-center font-medium px-3 rounded-md py-2 cursor-pointer transition-colors duration-200 ease-in ${"hover:bg-[#4174A8]/15 text-[#40444D] hover:text-[#4174A8] font-semibold"} overflow-hidden`}
                     onClick={() => setDropdownName(name)}
                   >
                     {name}

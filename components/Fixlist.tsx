@@ -26,17 +26,17 @@ export const FixList: React.FC<IProps> = ({ className, list }) => {
           <li className={className} key={num}>
             <Link
               href={"category"}
-              className="cursor-pointer hover:text-[#FF7B00]"
+              className="cursor-pointer hover:text-[#4682b4]"
             >
               {num}
             </Link>
           </li>
         ))}
         {list.length > 5 && (
-          <>
+          <div>
             {!showLess ? (
               <div
-                className="cursor-pointer bg-[#4682b4] text-sm text-white p-2 rounded-md float-end my-2 hover:bg-[#5699cf] transition ease-out delay-100 hover:text-[#eee9e9]"
+                className="cursor-pointer bg-[#4682b4] text-sm text-white p-2 rounded-md float-end my-2  hover:bg-[#5699cf] transition ease-out delay-100 hover:text-[#eee9e9]"
                 onClick={() => {
                   setShowLess(true);
                   setItem(() => [...list]);
@@ -46,7 +46,7 @@ export const FixList: React.FC<IProps> = ({ className, list }) => {
               </div>
             ) : (
               <div
-                className="cursor-pointer bg-[#4682b4] text-sm text-white p-2 rounded-md float-end my-2 hover:bg-[#5699cf] transition ease-out delay-100 hover:text-[#eee9e9]"
+                className="cursor-pointer  bg-[#4682b4] text-sm text-white p-2 rounded-md float-end my-2 hover:bg-[#5699cf] transition ease-out delay-100 hover:text-[#eee9e9]"
                 onClick={() => {
                   setShowLess(false);
                   setItem(modifiedList[0]);
@@ -55,7 +55,7 @@ export const FixList: React.FC<IProps> = ({ className, list }) => {
                 Hide
               </div>
             )}
-          </>
+          </div>
         )}
       </>
     );

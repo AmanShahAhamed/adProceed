@@ -187,9 +187,7 @@ export const a: Record<string, string[]> = {
 const Content = () => {
   return (
     <div className="">
-      <p className="font-semibold text-lg bg-[#4174a8] text-white  p-2">
-        Free Classified Advertising Website
-      </p>
+      <p className="font-semibold text-lg bg-[#4174a8] text-white  p-2">Free Classified Advertising Website</p>
       <ul className="p-2 bg-gray-100 text-sm border-[1px] border-black border-r-0 rounded-b-md">
         <li>
           Are you tired of the complexities and delays often associated with
@@ -206,39 +204,52 @@ const Content = () => {
           classified ads on our platform today.
         </li>
       </ul>
-      <div className="grid grid-cols-3 gap-3 p-2">
-        {Object.keys(a).map((key) => (
-          <div key={key} className="my-2">
-            <div className="flex gap-2 border-[1px] border-black p-2 rounded-md">
-              <Image alt="category" src={digitalItem} width={20} height={10} />
-              <Link
-                href={"category"}
-                className="text-[#039] text-base text-start font-semibold cursor-pointer hover:text-[#FF7B00] "
-              >
-                {key}
-              </Link>
+
+      <div className="flex flex-wrap gap-4">
+        {Array.from({ length: 3 }).map((_, columnIndex) => {
+          const start = Math.ceil((columnIndex * Object.keys(a).length) / 3);
+          const end = Math.ceil(((columnIndex + 1) * Object.keys(a).length) / 3);
+
+          return (
+            <div key={columnIndex} className="flex-1 min-w-[200px] px-2">
+              {Object.keys(a)
+                .slice(start, end)
+                .map((key) => (
+                  <div key={key} className="my-2 ">
+                    <div className="flex gap-2 border-[1px] border-black p-2 rounded-md">
+                      <Image alt="category" src={digitalItem} width={20} height={10} />
+                      <Link
+                        href="category"
+                        className="text-[#039] text-base text-start font-semibold cursor-pointer hover:text-[#4682b4]"
+                      >
+                        {key}
+                      </Link>
+                    </div>
+                    <ul className="mx-8 text-sm flex flex-col ">
+                      {
+                        // a[key].map((k) => (
+                        //   <li key={k} className="border-b-[1px] border-gray-100 py-2">
+                        //     <Link
+                        //       href="category"
+                        //       className="cursor-pointer hover:text-[#FF7B00]"
+                        //     >
+                        //       {k}
+                        //     </Link>
+                        //   </li>
+                        // ))
+                        <FixList
+                          className=" border-b-[1px] border-gray-100 py-2 "
+                          list={a[key]}
+                        />
+                      }
+                    </ul>
+                  </div>
+                ))}
             </div>
-            <ul className="mx-8 text-sm  ">
-              {
-                // a[key].map((k) => (
-                //   <li key={k} className="border-b-[1px] border-gray-100 py-2">
-                //     <Link
-                //       href={"category"}
-                //       className="cursor-pointer hover:text-[#FF7B00]"
-                //     >
-                //       {k}
-                //     </Link>
-                //   </li>
-                // ))
-                <FixList
-                  className="border-b-[1px] border-gray-100 py-2"
-                  list={a[key]}
-                />
-              }
-            </ul>
-          </div>
-        ))}
+          );
+        })}
       </div>
+
     </div>
   );
 };
