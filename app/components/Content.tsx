@@ -24,7 +24,6 @@ const Content = () => {
           classified ads on our platform today.
         </li>
       </ul>
-
       <div className="flex flex-wrap gap-4">
         {Array.from({ length: 3 }).map((_, columnIndex) => {
           const start = Math.ceil(
