@@ -1,6 +1,7 @@
 import TopHeader from "./components/TopHeader";
 import "./globals.css";
 import SidebarLeft from "./components/SidebarLeft";
+import Feedback from "./components/Feedback";
 
 export async function generateMetadata() {
   return {
@@ -21,14 +22,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-[#fff] px-[10%] text-black">
-        <TopHeader />
-        <div className="grid grid-cols-6">
-          <div className="col-span-1 border-[1px] border-[#b1c7de] border-r-0 bg-[#e4ebf8]">
-            <SidebarLeft />
+      <body className="bg-[#fff]">
+        <div className=" px-[10%] text-black">
+          <TopHeader />
+          <div className="grid grid-cols-6">
+            <div className="col-span-1 border-[1px] border-[#b1c7de] border-r-0 bg-[#e4ebf8]">
+              <SidebarLeft />
+            </div>
+            {children}
           </div>
-          {children}
         </div>
+        <Feedback />
       </body>
     </html>
   );

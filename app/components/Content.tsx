@@ -1,6 +1,6 @@
 import Link from "next/link";
 import FixList from "@/components/Fixlist";
-import { Category } from "@/constants/category";
+import { Category, CatLength } from "@/constants/category";
 
 const Content = () => {
   return (
@@ -25,29 +25,24 @@ const Content = () => {
         </li>
       </ul>
       <div className="flex flex-wrap gap-4">
-        {Array.from({ length: 3 }).map((_, columnIndex) => {
-          const start = Math.ceil(
-            (columnIndex * Object.keys(Category).length) / 3
-          );
-          const end = Math.ceil(
-            ((columnIndex + 1) * Object.keys(Category).length) / 3
-          );
-
+        {Array.from({ length: 3 }).map((_, colIndex) => {
+          const start = Math.ceil((colIndex * CatLength) / 3);
+          const end = Math.ceil(((colIndex + 1) * CatLength) / 3);
           return (
-            <div key={columnIndex} className="flex-1 min-w-[200px] px-2">
+            <div key={colIndex} className="flex-1 min-w-[200px] px-2">
               {Object.keys(Category)
                 .slice(start, end)
                 .map((key) => (
-                  <div key={Category[key].id} className="my-2 ">
-                    <div className="flex gap-2 border-[1px] border-black p-2 rounded-md">
+                  <div key={key} className="my-2 ">
+                    <Link
+                      href={`category?cat=${encodeURIComponent(key)}`}
+                      className="flex gap-2 border-[1px] border-black p-2 rounded-md"
+                    >
                       {Category[key].icon}
-                      <Link
-                        href="category"
-                        className="text-[#039] text-base py-2 text-center font-semibold cursor-pointer hover:text-[#4682b4]"
-                      >
-                        {key}
-                      </Link>
-                    </div>
+                      <p className="text-[#039] text-base  text-center font-semibold cursor-pointer hover:text-[#4682b4]">
+                        {Category[key].name}
+                      </p>
+                    </Link>
                     <ul className="mx-8 text-sm flex flex-col ">
                       <FixList
                         className=" border-b-[1px] border-gray-100 py-2 "

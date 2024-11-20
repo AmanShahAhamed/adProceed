@@ -42,7 +42,7 @@ export const FixList: React.FC<IProps> = ({ className, list }) => {
             ) : (
               <li className={className} key={num}>
                 <Link
-                  href={"category"}
+                  href={`category?cat=${encodeURIComponent(id)}`}
                   className="cursor-pointer hover:text-[#4682b4] hover:font-thin"
                 >
                   {num}
