@@ -3,6 +3,8 @@ import { findCategory } from "@/constants/category";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import DemoImage from "../../public/demo.png";
+import AdLocationIcon from "../../public/icons/ad-ilocation";
+import AdClockIcon from "../../public/icons/ad-clock";
 export default function Page() {
   const searchParam = useSearchParams();
   const slug = searchParam.get("cat");
@@ -30,7 +32,7 @@ export default function Page() {
         )}
       </div>
       {/* listing */}
-      <div className="border-[1px] border-black rounded-md grid grid-cols-8 p-2 my-2 bg-[#f5f7fb] cursor-pointer">
+      <div className="border-[1px] border-black  rounded-md grid grid-cols-8 p-2 my-2 bg-[#f5f7fb]  cursor-pointer">
         {/* image */}
         <div className="col-span-2 bg-white  flex items-center justify-center p-4">
           <Image
@@ -52,6 +54,16 @@ export default function Page() {
             veteran, we’ve got your back. The details are here for you to see:
             https://5d93.com/pbs/`}
           </p>
+          <div className="flex mt-8">
+            <span>
+              <AdLocationIcon height={25} />
+            </span>
+            <span>Kanpur-Unnao</span>
+            <span>
+              <AdClockIcon height={20} />
+            </span>
+            <span>23-12-2024</span>
+          </div>
         </div>
       </div>
     </div>

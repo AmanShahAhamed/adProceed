@@ -10,12 +10,18 @@ export default async function Home() {
       <div className="col-span-1 border-[1px] border-l-black">
         <SidebarRight />
       </div>
-      <div className="bg-[#4174A8] h-20 fixed right-0 bottom-4 place-content-center place-items-center rounded-full px-3 py-2 cursor-pointer hover:ring-4 transition delay-400">
-        <div className="bg-white w-fit pr-8 rounded-full h-12 flex place-items-center gap-2 ">
-          <div className="w-16 h-16 bg-[#4174A8] rounded-full flex place-content-center place-items-center border-[.5rem] border-white">
+      <div className="bg-[#4174A8] h-12 fixed right-2 bottom-4 place-content-center place-items-center rounded-full px-2 py-0 cursor-pointer hover:ring-2 transition delay-400">
+        <div className="bg-white w-fit pr-4 rounded-full h-8 flex place-items-center gap-0 ">
+          <div className="w-12 h-12 bg-[#4174A8] rounded-full flex place-content-center place-items-center border-[.25rem] border-white">
             <svg width="24" height="24" viewBox="0 0 24 24">
               <defs>
-                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <linearGradient
+                  id="gradient"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="100%"
+                >
                   <stop offset="0%" stopColor="#fff" stopOpacity="1" />
                   <stop offset="100%" stopColor="#8DACCA" stopOpacity="1" />
                 </linearGradient>
@@ -26,9 +32,7 @@ export default async function Home() {
               />
             </svg>
           </div>
-          <div className="text-2xl font-black text-[#4174A8] ">
-            Feedback
-          </div>
+          <div className="text-lg font-black text-[#4174A8] ">Feedback</div>
         </div>
       </div>
     </>
