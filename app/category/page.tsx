@@ -1,10 +1,17 @@
 "use client";
 import { findCategory } from "@/constants/category";
-import Image from "next/image";
 import { useSearchParams } from "next/navigation";
+import AdCard from "./components/adcard";
 import DemoImage from "../../public/demo.png";
-import AdLocationIcon from "../../public/icons/ad-ilocation";
-import AdClockIcon from "../../public/icons/ad-clock";
+import AdFilters from "./components/adFilters";
+
+const content = ` Are you ready to learn how to be successful? Join a System—a
+            friendly community of passionate people just like you! Together,
+            we’ll share strategies, provide feedback, and support each other to
+            achieve top success. Whether you’re just starting out or a seasoned
+            veteran, we’ve got your back. The details are here for you to see:
+            https://5d93.com/pbs/`;
+
 export default function Page() {
   const searchParam = useSearchParams();
   const slug = searchParam.get("cat");
@@ -31,41 +38,50 @@ export default function Page() {
           </p>
         )}
       </div>
+      {/* filters */}
+
+      <AdFilters />
+
+      <AdCard
+        previewImage={DemoImage}
+        title={"Transform Your Dream - Make It An Income-Generating Machine"}
+        content={content}
+        location={"Kanpur-Unnao"}
+        adDate={"23/12/2024"}
+        tag={"Available"}
+      />
+      <AdCard
+        previewImage={DemoImage}
+        title={"Transform Your Dream - Make It An Income-Generating Machine"}
+        content={content}
+        location={"Kanpur-Unnao"}
+        adDate={"23/12/2024"}
+        tag={"Free"}
+      />
+      <AdCard
+        previewImage={DemoImage}
+        title={"Transform Your Dream - Make It An Income-Generating Machine"}
+        content={content}
+        location={"Kanpur-Unnao"}
+        adDate={"23/12/2024"}
+        tag={"$ 500"}
+      />
+      <AdCard
+        previewImage={DemoImage}
+        title={"Transform Your Dream - Make It An Income-Generating Machine"}
+        content={content}
+        location={"Kanpur-Unnao"}
+        adDate={"23/12/2024"}
+        tag={"Rs. 200"}
+      />
+      <AdCard
+        previewImage={DemoImage}
+        title={"Transform Your Dream - Make It An Income-Generating Machine"}
+        content={content}
+        location={"Kanpur-Unnao"}
+        adDate={"23/12/2024"}
+      />
       {/* listing */}
-      <div className="border-[1px] border-black  rounded-md grid grid-cols-8 p-2 my-2 bg-[#f5f7fb]  cursor-pointer">
-        {/* image */}
-        <div className="col-span-2 bg-white  flex items-center justify-center p-4">
-          <Image
-            alt="ad_image"
-            src={DemoImage}
-            className="max-w-32 relative z-30 "
-          />
-        </div>
-        {/* content */}
-        <div className="col-span-6 p-2">
-          <h3 className="text-[#2d4f78] font-bold  text-pretty text-xl">
-            {"Transform Your Dream - Make It An Income-Generating Machine"}
-          </h3>
-          <p>
-            {` Are you ready to learn how to be successful? Join a System—a
-            friendly community of passionate people just like you! Together,
-            we’ll share strategies, provide feedback, and support each other to
-            achieve top success. Whether you’re just starting out or a seasoned
-            veteran, we’ve got your back. The details are here for you to see:
-            https://5d93.com/pbs/`}
-          </p>
-          <div className="flex mt-8">
-            <span>
-              <AdLocationIcon height={25} />
-            </span>
-            <span>Kanpur-Unnao</span>
-            <span>
-              <AdClockIcon height={20} />
-            </span>
-            <span>23-12-2024</span>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }
