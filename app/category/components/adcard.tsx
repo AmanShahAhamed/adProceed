@@ -19,11 +19,20 @@ const AdCard: React.FC<IProps> = ({
   location,
   adDate,
   tag,
+  isFeatures,
 }) => {
   return (
-    <div className="rounded-lg grid grid-cols-8 p-2 my-2 bg-[#f5f7fb]  cursor-pointer relative shadow-md hover:border-gray-300 hover:border-[1px] hover:shadow-xl">
+    <div
+      className={`rounded-lg grid grid-cols-8 p-2 my-2 ${
+        isFeatures ? "bg-orange-100" : "bg - [#f5f7fb]"
+      }  cursor-pointer relative shadow-md hover:border-gray-300 hover:border-[1px] hover:shadow-xl`}
+    >
       {/* image */}
-      <div className="col-span-1 bg-gray-100  flex items-center justify-center p-4">
+      <div
+        className={`col-span-1 ${
+          isFeatures ? "bg-orange-200" : "bg-gray-100"
+        }  flex items-center justify-center p-4`}
+      >
         <Image
           alt="ad_image"
           src={previewImage}
@@ -53,8 +62,9 @@ const AdCard: React.FC<IProps> = ({
       </div>
       {/* tag */}
       {tag && (
-        <div className="absolute top-0 right-[-28px]  text-base rotate-45  bg-red-400 px-4 py-1 rounded-lg text-white  text-center">
+        <div className="absolute top-[10px] right-[-40px]  text-base rotate-45  bg-red-400 px-4 py-1 rounded-sm text-white  text-center clip-m-shape ">
           {tag}
+          <div className="absolute bg-white rounded-full w-2 h-2 top-1/2 left-[5px]"></div>
         </div>
       )}
     </div>

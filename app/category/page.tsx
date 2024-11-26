@@ -4,6 +4,7 @@ import { useSearchParams } from "next/navigation";
 import AdCard from "./components/adcard";
 import DemoImage from "../../public/demo.png";
 import AdFilters from "./components/adFilters";
+import Pagination from "../utils-components/pagination";
 
 const content = ` Are you ready to learn how to be successful? Join a System—a
             friendly community of passionate people just like you! Together,
@@ -41,6 +42,7 @@ export default function Page() {
       {/* filters */}
 
       <AdFilters />
+      {/* listing */}
 
       <AdCard
         previewImage={DemoImage}
@@ -49,6 +51,7 @@ export default function Page() {
         location={"Kanpur-Unnao"}
         adDate={"23/12/2024"}
         tag={"Available"}
+        isFeatures={true}
       />
       <AdCard
         previewImage={DemoImage}
@@ -81,7 +84,14 @@ export default function Page() {
         location={"Kanpur-Unnao"}
         adDate={"23/12/2024"}
       />
-      {/* listing */}
+
+      {/* pagination */}
+      <Pagination
+        setCurrentPage={(page: number) => console.log(page)}
+        currentPage={8}
+        totalItems={10}
+        pageSize={20}
+      />
     </div>
   );
 }
