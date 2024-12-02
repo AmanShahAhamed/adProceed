@@ -31,7 +31,7 @@ export default function Page() {
           } border-black`}
         >
           {<span className="text-white">{categoryInfo.icon}</span>}
-          <p className="m-1 text-black font-semibold">{categoryInfo.name}</p>
+          <p className="m-1 text-[#039] font-semibold">{categoryInfo.name}</p>
         </div>
         {categoryInfo.desc && (
           <p className="text-base border-[1px] border-black p-2 rounded-sm  bg-gray-100">

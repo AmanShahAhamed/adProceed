@@ -1,6 +1,7 @@
 import AdLocationIcon from "../../../public/icons/ad-location";
 import AdClockIcon from "../../../public/icons/ad-clock";
 import Image, { StaticImageData } from "next/image";
+import { useRouter } from "next/navigation";
 
 interface IProps {
   previewImage: StaticImageData;
@@ -21,11 +22,13 @@ const AdCard: React.FC<IProps> = ({
   tag,
   isFeatures,
 }) => {
+  const router = useRouter();
   return (
     <div
       className={`rounded-lg grid grid-cols-8 p-2 my-2 ${
         isFeatures ? "bg-orange-100" : "bg - [#f5f7fb]"
       }  cursor-pointer relative shadow-md hover:border-gray-300 hover:border-[1px] hover:shadow-xl`}
+      onClick={() => router.push("category/1")}
     >
       {/* image */}
       <div

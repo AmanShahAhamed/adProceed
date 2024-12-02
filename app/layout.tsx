@@ -2,6 +2,12 @@ import TopHeader from "./components/TopHeader";
 import "./globals.css";
 import SidebarLeft from "./components/SidebarLeft";
 import Feedback from "./components/Feedback";
+import { Poppins } from "next/font/google";
+
+const poppins = Poppins({
+  weight: ["300", "400", "600"],
+  subsets: ["latin"],
+});
 
 export async function generateMetadata() {
   return {
@@ -22,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-[#fff]">
+      <body className={`bg-[#fff] ${poppins.className}`}>
         <div className=" px-[10%] text-black">
           <TopHeader />
           <div className="grid grid-cols-6">
