@@ -32,3 +32,23 @@ body {
 .clip-m-shape2 {
   clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
 }
+
+@keyframes floatTop {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.zoomIn {
+  transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.zoomOut {
+  animation: floatTop 0.5s ease-in-out;
+}
