@@ -56,7 +56,7 @@ const Pagination: React.FC<IPagination> = ({
   return (
     <div className="w-full h-10 my-2">
       <div className="text-[#202224]/60 font-semibold text-base place-items-center left">
-        <div className="rounded-lg border-2 h-10 flex items-center cursor-pointer">
+        <div className="rounded-lg border-2 h-10 flex items-center justify-end cursor-pointer">
           {currentPage > 1 && (
             <div
               className="h-full w-10 hover:bg-gray-200 flex justify-center items-center"

@@ -24,7 +24,7 @@ const Content = () => {
           classified ads on our platform today.
         </li>
       </ul>
-      <div className="flex flex-wrap gap-4">
+      <div className="flex  flex-wrap gap-4">
         {Array.from({ length: 3 }).map((_, colIndex) => {
           const start = Math.ceil((colIndex * CatLength) / 3);
           const end = Math.ceil(((colIndex + 1) * CatLength) / 3);
@@ -33,7 +33,7 @@ const Content = () => {
               {Object.keys(Category)
                 .slice(start, end)
                 .map((key) => (
-                  <div key={key} className="my-2 ">
+                  <div key={key} className="my-2">
                     <Link
                       href={`category?cat=${encodeURIComponent(key)}`}
                       className="flex gap-2 border-[1px] border-black p-2 rounded-md"
@@ -43,7 +43,7 @@ const Content = () => {
                         {Category[key].name}
                       </p>
                     </Link>
-                    <ul className="mx-8 text-sm flex flex-col ">
+                    <ul className="mx-8 text-sm flex flex-col">
                       <FixList
                         className=" border-b-[1px] border-gray-100 py-2 "
                         list={Category[key].child}
